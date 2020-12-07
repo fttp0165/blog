@@ -1,0 +1,11 @@
+<h4>文章</h4>
+<div class="post_title">
+      <%=@post.title%>
+</div>
+<div class="post_content">
+      <pre>  <%=@post.content%></pre>
+</div>
+<div class="post_birth">
+      <%=time_tag @post.created_at%>
+</div>
+<p><%=link_to "返回",root_path%></p>

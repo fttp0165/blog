@@ -1,0 +1,20 @@
+<h4>BLOG</h4>
+
+<p><%=link_to "新增文章",new_post_path%></p>
+<%@post.each do |post|%>
+<div class="box">
+      <div class="post_title">
+            <%=link_to post.title,post_path(post)%>
+      </div>
+      <div class="post_content">
+            <%=post.content%>
+      </div>
+      <div class="post_birth">
+            <pre> <%=time_tag post.created_at%> </pre>
+      </div>
+      <div class="post_mos">
+            <p><%=link_to "編輯",edit_post_path(post)%></p>
+            <p><%=link_to "刪除",post_path(post),method: :delete,data:{confirm: "are you sure?"}%></p>
+      </div>
+</div>
+<%end%>

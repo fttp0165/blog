@@ -1,0 +1,41 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.box{
+      border:solid 1px lightblue;
+      display: block;
+      position: relative;
+      height:200px;
+
+      .post_title{
+            font-size:30px;
+
+      }
+      .post_content{
+            border:solid 1px lightblue;
+            display: block;
+            width: 80%;
+            height:100px;
+            overflow:hidden;
+      }
+    
+      .post_birth{
+            position: absolute;
+            bottom: 20px;
+            right: 20%;
+
+      }
+      .post_mos{
+            position: absolute;
+            bottom: 20px;
+            right: 0%;
+      }
+    
+
+
+}
+.add_post textarea{
+      margin:20px;
+      width: 80vw;
+      height: 60vh;
+}
