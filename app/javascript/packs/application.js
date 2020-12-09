@@ -13,6 +13,8 @@ import jQuery from "./jquery-3.5.1.min"
 window.$ = window.jQuery = jQuery
 
 
+
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -20,7 +22,12 @@ window.$ = window.jQuery = jQuery
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-// $().ready(function () {
-//       consile.log("hello");
-// });
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
 
+
+
+
+require("trix")
+require("@rails/actiontext")

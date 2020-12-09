@@ -3,10 +3,12 @@ class PostsController < ApplicationController
       before_action :clear_params,only:[:create,:update]
       def  index
         @post=Post.all
+        
       end
 
       def new
         @post=Post.new
+  
       end
       def  show
           

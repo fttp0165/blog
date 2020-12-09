@@ -15,9 +15,26 @@
 </div>
 <div class="add_post">
       <%=p.label :content%>
-      <%=p.text_area :content%>
+      <%=p.rich_text_area :content%>
 </div>
 <%=p.submit%>
 
-<p><%=link_to "返回",root_path%></p>
+
 <%end%>
+
+
+<!-- <%= form_with(model: post) do |form| %>
+<div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
+</div>
+<div class="field">
+      <%= form.label :content %>
+      <%= form.rich_text_area :content %>
+</div>
+<div class="field">
+      <%=form.submit%>
+</div>
+<% end %> -->
+
+<p><%=link_to "返回",root_path%></p>

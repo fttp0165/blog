@@ -34,8 +34,36 @@
 
 
 }
-.add_post textarea{
+  .add_post textarea{
       margin:20px;
       width: 80vw;
       height: 60vh;
-}
+ }
+ .show_box{
+       background-color: lightblue;
+       position: relative;
+       height: 80vh;
+       margin-top:5%;
+       .show_post_title{
+            font-size: 50px;
+       }
+       .show_post_content{
+             background-color: lightpink;
+             font-size: 35px;
+             width:80vw;
+             padding: 1%;
+             position: relative;
+             left:10%;
+             box-sizing: inherit;
+             white-space: nowrap;
+       .trix-content div{
+             display: block;
+             white-space:pre-line;
+             word-wrap:break-word;  
+      }
+
+         
+
+       }
+       
+ }

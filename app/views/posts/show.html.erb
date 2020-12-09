@@ -1,11 +1,13 @@
 <h4>文章</h4>
-<div class="post_title">
-      <%=@post.title%>
-</div>
-<div class="post_content">
-      <pre>  <%=@post.content%></pre>
-</div>
-<div class="post_birth">
-      <%=time_tag @post.created_at%>
+<div class="show_box">
+      <div class="show_post_title">
+            <%=@post.title%>
+      </div>
+      <div class="show_post_content">
+            <pre>  <%=@post.content%></pre>
+      </div>
+      <div class="show_post_birth">
+            <%=time_tag @post.created_at%>
+      </div>
 </div>
 <p><%=link_to "返回",root_path%></p>
