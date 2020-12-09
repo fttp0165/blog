@@ -1,6 +1,6 @@
 <h4>BLOG</h4>
 
-<p><%=link_to "新增文章",new_post_path%></p>
+<p><%=link_to "<span>新增文章</span>".html_safe,new_post_path,class:"add_bun"%></p>
 <%@post.each do |post|%>
 <div class="box">
       <div class="post_title">

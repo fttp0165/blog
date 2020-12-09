@@ -6,7 +6,7 @@
       display: block;
       position: relative;
       height:200px;
-      margin: 5%;
+      margin: 8%;
 
       .post_title{
             font-size:30px;
@@ -89,4 +89,50 @@
 
        }
        
+ }
+
+ .add_bun{
+          border:solid 1px orange;
+          border-radius: 28px;
+          text-decoration: none;
+          display: inline-block;
+          position: absolute;
+          top:5px;
+          right: 30px;
+          box-sizing: border-box;
+       
+          background-color: orange;
+          width: 56px;
+          color: gray;
+          line-height: 56px;
+          transition: all 0.8s;
+          overflow: hidden;
+
+ }
+ .add_bun span{
+      white-space: nowrap;
+      opacity: 0;
+ }
+ .add_bun:hover{
+            padding: 0 25px;
+            width: auto;
+            background-color: #1e1e1e;
+ }
+ .add_bun:hover span{
+      opacity: 1;
+      color: orange;
+}
+ .add_bun:after{
+       content: "+";
+       font-size: 40px;
+       line-height: 50px;
+       color: gray;
+       position: absolute;
+       right: 13px;
+       top:0px;
+       
+ }
+ .add_bun:hover::after{
+       opacity: 0;
+      
  }
