@@ -5,7 +5,7 @@
       border:solid 1px lightblue;
       display: block;
       position: relative;
-      height:200px;
+      height:300px;
       margin: 8%;
 
       .post_title{
@@ -16,7 +16,7 @@
            
             display: block;
             width: 80%;
-            height:100px;
+            height:150px;
             overflow:hidden;
       }
     
@@ -135,4 +135,10 @@
  .add_bun:hover::after{
        opacity: 0;
       
+ }
+ .post_content img{
+
+      border: 1px solid #000;
+      width: 150px;
+      height: 150px;
  }
