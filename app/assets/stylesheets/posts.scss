@@ -6,13 +6,14 @@
       display: block;
       position: relative;
       height:200px;
+      margin: 5%;
 
       .post_title{
             font-size:30px;
 
       }
       .post_content{
-            border:solid 1px lightblue;
+           
             display: block;
             width: 80%;
             height:100px;
@@ -34,21 +35,41 @@
 
 
 }
+.add_title {
+      position: relative;
+      display: block;
+      width: 80vw;
+      border-radius: 10px;
+      left:65px;
+      top:30px;
+      #post_title{
+            width: 60vw;
+      }
+ }
+.add_post {
+      margin:5%;
+      width: 80vw;
+    
+      #post_content{
+            height: 60vh;
+      }
+
+ }
   .add_post textarea{
-      margin:20px;
+      margin:10%;
       width: 80vw;
       height: 60vh;
  }
  .show_box{
-       background-color: lightblue;
+       
        position: relative;
-       height: 80vh;
+       height: 100vh;
        margin-top:5%;
        .show_post_title{
             font-size: 50px;
        }
        .show_post_content{
-             background-color: lightpink;
+             
              font-size: 35px;
              width:80vw;
              padding: 1%;
@@ -60,6 +81,8 @@
              display: block;
              white-space:pre-line;
              word-wrap:break-word;  
+            
+            
       }
 
          

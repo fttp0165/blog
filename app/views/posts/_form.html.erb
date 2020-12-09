@@ -1,6 +1,6 @@
 <%if post.errors.messages.any?%>
 <ul>
-      <%=post.errors.full_messages do |msg|%>
+      <%post.errors.full_messages.each do |msg|%>
       <li>
             <%=msg%>
       </li>
@@ -8,7 +8,6 @@
 </ul>
 <%end%>
 <%= form_for post do |p| %>
-
 <div class="add_title">
       <%=p.label :title%>
       <%=p.text_field :title%>
@@ -18,9 +17,13 @@
       <%=p.rich_text_area :content%>
 </div>
 <%=p.submit%>
-
-
 <%end%>
+
+<!-- <%#= form_with model:Post.new do |form| %>
+<%#= form.text_field :title %>
+<%#= form.text_field :content %>
+<%#= form.submit %>
+<#% end %> -->
 
 
 <!-- <%= form_with(model: post) do |form| %>

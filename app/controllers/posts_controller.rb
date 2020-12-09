@@ -3,7 +3,9 @@ class PostsController < ApplicationController
       before_action :clear_params,only:[:create,:update]
       def  index
         @post=Post.all
-        
+        @post.each do|p|
+          p.created_at =p.created_at + 28800
+        end
       end
 
       def new
@@ -11,7 +13,7 @@ class PostsController < ApplicationController
   
       end
       def  show
-          
+        require "image_processing/mini_magick"
       end
 
       def create
