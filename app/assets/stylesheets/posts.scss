@@ -40,8 +40,8 @@
       display: block;
       width: 80vw;
       border-radius: 10px;
-      left:65px;
-      top:30px;
+      left:5%;
+      top:80px;
       #post_title{
             width: 60vw;
       }
@@ -60,6 +60,7 @@
       width: 80vw;
       height: 60vh;
  }
+
  .show_box{
        
        position: relative;
@@ -67,6 +68,8 @@
        margin-top:5%;
        .show_post_title{
             font-size: 50px;
+            left: 10%;
+            position: absolute;
        }
        .show_post_content{
              
@@ -81,16 +84,17 @@
              display: block;
              white-space:pre-line;
              word-wrap:break-word;  
-            
-            
-      }
-
-         
+           }
 
        }
+      
        
  }
-
+ .post_submit{
+      position: absolute;
+      right: 200px;
+      bottom:15%;
+}
  .add_bun{
           border:solid 1px orange;
           border-radius: 28px;
@@ -141,4 +145,18 @@
       border: 1px solid #000;
       width: 150px;
       height: 150px;
+ }
+
+ .show_back{
+       position: fixed;
+       bottom: 100px;
+       right: 100px;
+       border: solid 2px rgb(163, 46, 163);
+       background-color: orange;
+       border-radius: 25px;
+       padding:0 20px;
+       line-height: 25px;
+       font-size: 20px;
+       color:rgb(163, 46, 163);
+
  }

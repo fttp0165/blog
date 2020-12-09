@@ -16,7 +16,9 @@
       <%=p.label :content%>
       <%=p.rich_text_area :content%>
 </div>
-<%=p.submit%>
+<div class="post_submit">
+      <%=p.submit%>
+</div>
 <%end%>
 
 <!-- <%#= form_with model:Post.new do |form| %>
@@ -40,4 +42,5 @@
 </div>
 <% end %> -->
 
-<p><%=link_to "返回",root_path%></p>
+
+<p><%=link_to "返回",root_path,class:"show_back"%></p>
