@@ -7,19 +7,24 @@
       <%end%>
 </ul>
 <%end%>
-<%= form_for post do |p| %>
-<div class="add_title">
-      <%=p.label :title%>
-      <%=p.text_field :title%>
+<div class="row row_box ">
+      <%= form_for post do |p| %>
+      <div class="add_title col-12">
+            <%=p.label :title%>
+            <%=p.text_field :title%>
+      </div>
+      <div class="row col-12 row_content">
+            <div class="col-1"></div>
+            <div class="add_post col-9 ">
+                  <%=p.rich_text_area :content,rows: 15%>
+            </div>
+            <div class="col-2"></div>
+      </div>
+      <div class="post_submit col-12">
+            <%=p.submit%>
+      </div>
+      <%end%>
 </div>
-<div class="add_post">
-      <%=p.label :content%>
-      <%=p.rich_text_area :content%>
-</div>
-<div class="post_submit">
-      <%=p.submit%>
-</div>
-<%end%>
 
 <!-- <%#= form_with model:Post.new do |form| %>
 <%#= form.text_field :title %>

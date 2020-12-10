@@ -13,13 +13,11 @@
 
       }
       .post_content{
-           
             display: block;
             width: 80%;
             height:150px;
             overflow:hidden;
       }
-    
       .post_birth{
             position: absolute;
             bottom: 20px;
@@ -32,35 +30,48 @@
             right: 1%;
       }
     
-
-
 }
-.add_title {
+.row_box{
+      width: 100vw;
+      height: 100vh;
       position: relative;
-      display: block;
-      width: 80vw;
-      border-radius: 10px;
-      left:5%;
-      top:80px;
+}
+.new_post{
+      width: 100%;
+}
+.row_content{
+      width: 80%;
+      height: 90%;
+}
+
+.add_title {
+      display: inline-block;
+      margin: 40px;
+      left: 4%;
       #post_title{
-            width: 60vw;
+      width: 400px;  
+      border-top:none;
+      border-left:none;
+      border-right:none;
       }
  }
-.add_post {
-      margin:5%;
-      width: 80vw;
-    
-      #post_content{
-            height: 60vh;
-      }
+
+.add_post #post_content{
+      width: 80%;
+      height: 1000px;
+      top:100px;
+      font-size: 30px;
+      overflow-y:auto;
+      border:none;
+ }
+ #post_content:hover{
+       border-left: gray solid 2px;
 
  }
-  .add_post textarea{
-      margin:10%;
-      width: 80vw;
-      height: 60vh;
- }
+ #post_content #text{
+      border-bottom: dotted 1px gray;
 
+ }
  .show_box{
        
        position: relative;
@@ -72,7 +83,6 @@
             position: absolute;
        }
        .show_post_content{
-             
              font-size: 35px;
              width:80vw;
              padding: 1%;
@@ -85,32 +95,31 @@
              white-space:pre-line;
              word-wrap:break-word;  
            }
-
        }
-      
-       
  }
  .post_submit{
+      top:0px;
+      left:60%;
       position: absolute;
-      right: 200px;
-      bottom:15%;
+      display: block;
+      
 }
- .add_bun{
-          border:solid 1px orange;
-          border-radius: 28px;
-          text-decoration: none;
-          display: inline-block;
-          position: absolute;
-          top:5px;
-          right: 30px;
-          box-sizing: border-box;
-       
-          background-color: orange;
-          width: 56px;
-          color: gray;
-          line-height: 56px;
-          transition: all 0.8s;
-          overflow: hidden;
+.add_bun{
+      border:solid 1px orange;
+      border-radius: 28px;
+      text-decoration: none;
+      display: inline-block;
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      box-sizing: border-box;
+      
+      background-color: orange;
+      width: 56px;
+      color: gray;
+      line-height: 56px;
+      transition: all 0.8s;
+      overflow: hidden;
 
  }
  .add_bun span{
@@ -118,9 +127,9 @@
       opacity: 0;
  }
  .add_bun:hover{
-            padding: 0 25px;
-            width: auto;
-            background-color: #1e1e1e;
+      padding: 0 25px;
+      width: auto;
+      background-color: #1e1e1e;
  }
  .add_bun:hover span{
       opacity: 1;
@@ -134,14 +143,11 @@
        position: absolute;
        right: 13px;
        top:0px;
-       
  }
  .add_bun:hover::after{
        opacity: 0;
-      
  }
  .post_content img{
-
       border: 1px solid #000;
       width: 150px;
       height: 150px;
