@@ -8,6 +8,7 @@
 </ul>
 <%end%>
 <div class="row row_box ">
+      <div class="col-12"></div>
       <%= form_for post do |p| %>
       <div class="add_title col-12">
             <%=p.label :title%>
@@ -24,6 +25,7 @@
             <%=p.submit%>
       </div>
       <%end%>
+      <p><%=link_to "返回",root_path,class:"show_back"%></p>
 </div>
 
 <!-- <%#= form_with model:Post.new do |form| %>
@@ -46,6 +48,3 @@
       <%=form.submit%>
 </div>
 <% end %> -->
-
-
-<p><%=link_to "返回",root_path,class:"show_back"%></p>
