@@ -2,7 +2,7 @@ class PostsController < ApplicationController
       before_action :get_posts,only:[:show,:edit,:destroy,:update]
       before_action :clear_params,only:[:create,:update]
       def  index
-        @post=Post.all
+        @post=Post.order(id: :desc)
         @post.each do|p|
           p.created_at =p.created_at + 28800
         end
