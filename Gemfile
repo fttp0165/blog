@@ -57,3 +57,4 @@ gem 'mini_magick', '~> 4.11'
 gem "image_processing", "~> 1.0"
 
 gem 'mysql2', '~> 0.4.4'
+gem 'rails_admin', '~> 2.0'
