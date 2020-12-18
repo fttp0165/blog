@@ -9,9 +9,23 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-import jQuery from "./jquery-3.5.1.min"
-window.$ = window.jQuery = jQuery
+require('jquery')
+require('bootstrap');
+//= require jquery-ui
 
+import "bootstrap";
+import "../stylesheets/application" 
+document.addEventListener("turbolinks:load", () => {
+  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="popover"]').popover()
+})
+
+
+
+
+
+// import jQuery from "./jquery-3.5.1.min"
+// window.$ = window.jQuery = jQuery
 
 
 
@@ -31,3 +45,4 @@ window.$ = window.jQuery = jQuery
 
 require("trix")
 require("@rails/actiontext")
+
