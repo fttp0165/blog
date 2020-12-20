@@ -3,30 +3,25 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-const { $ } = require("@rails/ujs")
+//const { $ } = require("@rails/ujs")
 
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
-require('bootstrap');
+
 //= require jquery-ui
+//import "bootstrap";
+import "../stylesheets" 
 
-import "bootstrap";
-import "../stylesheets/application" 
-document.addEventListener("turbolinks:load", () => {
-  $('[data-toggle="tooltip"]').tooltip()
-  $('[data-toggle="popover"]').popover()
-})
-
-
-
-
-
-// import jQuery from "./jquery-3.5.1.min"
-// window.$ = window.jQuery = jQuery
-
+window.jQuery=$
+window.$=$
+require('bootstrap');
+// document.addEventListener("turbolinks:load", () => {
+//   $('[data-toggle="tooltip"]').tooltip()
+//   $('[data-toggle="popover"]').popover()
+// })
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -39,10 +34,14 @@ document.addEventListener("turbolinks:load", () => {
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
-
-
-
 require("trix")
 require("@rails/actiontext")
+
+$(document).ready(function(){
+  console.log("222");
+});
+
+
+
+
 
