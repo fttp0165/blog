@@ -1,11 +1,55 @@
-<div class="show_box">
+<div class="container">
+  <div class="show_box">
+    <div class="show_post_title">
+      <%=@post.title%>
+    </div>
+    <div class="show_post_content">
+      <pre> <%=@post.content%></pre>
+    </div>
+  </div>
 
-      <div class="show_post_title">
-            <%=@post.title%>
+  <%=current_user.email%>
+    <hr>
+    <div class="post_comment">
+      <div class="row">
+        <div class="col-12 comment_user">
+          <div class="row">
+            <div class="col"></div>
+              <button type="button" class="btn btn-info col" style="margin:5px;">facebook</button>
+              <button type="button" class="btn btn-info col" style="margin:5px;">twitter</button>
+              <div class="col-7" style="height:5px;"></div>
+          </div>
+        </div>
+        <div class="col-12" style="height: 10px;"> </div>
+        <div class="col-2 comment_user">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="col-9">
+          <%=form_for @comment ,url:post_comments_path(@post),class:"row" do |comment|%>
+            <%=comment.rich_text_area :content,rows: 15%>
+              <%=comment.submit "留言" ,class:"btn btn-outline-info col-2"%>
+                <%end%>
+        </div>
       </div>
-      <div class="show_post_content">
-            <pre> <%=@post.content%></pre>
-      </div>
+    </div>
+    <hr>
 
+    <%@comments.each do |comment|%>
+      <div class="card text-center">
+        <div class="card-header">
+          <%=comment.user.email || "guest" %> 留下足跡
+        </div>
+        <div class="card-body">
+          <%=comment.content%>
+        </div>
+        <div class="card-footer text-muted">
+          <%=time_ago_in_words comment.created_at%>
+        </div>
+      </div>
+      <br />
+      <%end%>
+
+        <p>
+          <%=link_to "返回" ,root_path,class:"show_back"%>
+        </p>
 </div>
-<p><%=link_to "返回",root_path,class:"show_back"%></p>

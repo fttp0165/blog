@@ -160,7 +160,7 @@
       text-decoration: none;
       display: inline-block;
       position: absolute;
-      top: 120px;
+      top: 6%;
       right: 30px;
       box-sizing: border-box;
       background-color: orange;
@@ -170,4 +170,17 @@
       transition: all 0.8s;
       overflow: hidden;
 
+ }
+ .post_comment{
+       position: relative;
+       display: block;
+
+ }
+ .comment_text{
+       width: auto;
+       height: 100px;
+ }
+
+ .comment_user i.fas{
+      font-size: 70px;
  }
