@@ -10,9 +10,16 @@
 <div class="row row_box ">
       <div class="col-12"></div>
       <%= form_for post do |p| %>
+     
       <div class="add_title col-12">
             <%=p.label :title%>
             <%=p.text_field :title%>
+      </div>
+      <div class="post_status col-12" style="left: 10%;">
+          <%= radio_button_tag(:status, :ublish) %>
+          <%= label_tag(:post_status, "發表") %>
+          <%= radio_button_tag(:status, :adult) %>
+          <%= label_tag(:post_status, "草稿") %>
       </div>
       <div class="row col-12 row_content">
             <div class="col-1"></div>

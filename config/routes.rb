@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root "posts#index"
   resources :posts do
     resources :comments,shallow: true,except:[:index,:new,:show]
+    get '/show_drafts', to: 'controller#show_drafts'
   end
   
 end
