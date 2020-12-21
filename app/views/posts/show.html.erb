@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <%=current_user.email%>
+  <%= current_user.try(:email) || "訪客"%>
     <hr>
     <div class="post_comment">
       <div class="row">
@@ -37,13 +37,16 @@
     <%@comments.each do |comment|%>
       <div class="card text-center">
         <div class="card-header">
-          <%=comment.user.email || "guest" %> 留下足跡
+          <%=comment.user.try(:email) || "guest" %> 留下足跡
         </div>
         <div class="card-body">
           <%=comment.content%>
         </div>
         <div class="card-footer text-muted">
           <%=time_ago_in_words comment.created_at%>
+          <%if comment.user == current_user%>
+          <%=link_to "刪除留言",comment_path(comment),method: :delete,data:{confirm:'sure?'} %>
+          <%end%>
         </div>
       </div>
       <br />

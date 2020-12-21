@@ -15,7 +15,7 @@ class PostsController < ApplicationController
       def  show
         require "image_processing/mini_magick"
         @comment=PostComment.new
-        @comments=PostComment.includes(:post).order(id: :desc)
+        @comments=@post.post_comments.includes(:post).order(id: :desc)
       end
 
       def create
