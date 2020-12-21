@@ -16,9 +16,9 @@
             <%=p.text_field :title%>
       </div>
       <div class="post_status col-12" style="left: 10%;">
-          <%= radio_button_tag(:status, :ublish) %>
+          <%= p.radio_button(:status, :publish,:checked => true) %>
           <%= label_tag(:post_status, "發表") %>
-          <%= radio_button_tag(:status, :adult) %>
+          <%= p.radio_button(:status, :draft) %>
           <%= label_tag(:post_status, "草稿") %>
       </div>
       <div class="row col-12 row_content">

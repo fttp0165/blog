@@ -1,0 +1,8 @@
+
+<ul>
+<% @post.each do |p|%>
+<div class="post_title">
+      <%=link_to p.title,post_path(p)%>
+</div>
+<%end%>
+</ul>

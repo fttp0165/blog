@@ -2,7 +2,7 @@ class PostsController < ApplicationController
       before_action :get_posts,only:[:show,:edit,:destroy,:update]
       before_action :clear_params,only:[:create,:update]
       def  index
-        @post=Post.order(id: :desc)
+        @post=Post.order(id: :desc).where("!status")
         @post.each do|p|
           p.created_at =p.created_at + 28800
         end
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
       end
 
       def create
-        @post=Post.new( @clear_params)
+        @post=current_user.posts.new(@clear_params)
         if @post.save
          redirect_to root_path
         else
@@ -46,11 +46,15 @@ class PostsController < ApplicationController
             redirect_to root_path
       end
 
+
       private
       def clear_params
-        @clear_params=params.require(:post).permit(:title,:content)
+        @clear_params=params.require(:post).permit(:title,:content,:status)
       end
       def get_posts
             @post=Post.find(params[:id])
+      end
+      def find_user
+        @user=User.find(curret_user[:id])
       end
 end  
