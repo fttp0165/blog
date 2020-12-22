@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
 
   get '/show_drafts', to: 'show_drafts#index'
+  get '/show_publish', to: 'show_drafts#publish'
   
 end
