@@ -12,7 +12,7 @@ class PostsController < ApplicationController
         @post=Post.new
   
       end
-      
+
       def like
         post=Post.find(params[:id])
         if current_user.like_posts.include?(post)
@@ -28,6 +28,7 @@ class PostsController < ApplicationController
         require "image_processing/mini_magick"
         @comment=PostComment.new
         @comments=@post.post_comments.includes(:post).order(id: :desc)
+        
       end
 
       def create

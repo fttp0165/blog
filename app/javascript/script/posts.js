@@ -7,7 +7,6 @@ document.addEventListener('turbolinks:load',()=>{
       const token =document.querySelector('meta[name=csrf-token]').content
       const postId=e.currentTarget.dataset.postId
       const icon=e.target
-      console.log(postId)
       const ax = require('axios');
       ax.defaults.headers.common['X-CSRF-TOKEN'] = token;
       ax.post(`/posts/${postId}/like`)

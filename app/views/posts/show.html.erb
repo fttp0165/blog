@@ -15,9 +15,8 @@
 
 
   <%= current_user.try(:email) || "訪客"%>
-  <a href="#" class="like_btn" data-post-id="<%= @post.id %>">
+  <a class="like_btn" data-post-id="<%= @post.id %>">
     <%if current_user.like_posts.include?(@post)%>
-    <%="按過"%>
     <i class="fas fa-thumbs-up"></i>
     <%else%>
     <i class="far fa-thumbs-up"></i>
