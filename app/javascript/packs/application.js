@@ -34,7 +34,7 @@ document.addEventListener("turbolinks:load", () => {
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
+require("script")
 
 
 

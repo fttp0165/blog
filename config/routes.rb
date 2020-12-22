@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   
   root "posts#index"
   resources :posts do
+    member do
+      post :like
+    end
     resources :comments,shallow: true,except:[:index,:new,:show]
   end
 

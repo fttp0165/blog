@@ -99,26 +99,45 @@
        }
  }
 
+ .add_bun{
+      border:solid 1px lightgreen;
+      border-radius: 28px;
+      display: inline-block;
+      position: absolute;
+      top: 8%;
+      right: 30px;
+      box-sizing: border-box;
+      background-color: lightgreen;
+      width: 46px;
+      color: gray;
+      line-height: 46px;
+      transition: all 0.8s;
+      overflow: hidden;
+      text-decoration: none;
+ }
+
  .add_bun span{
       white-space: nowrap;
+      text-decoration:none;
       opacity: 0;
+      
  }
  .add_bun:hover{
       padding: 0 25px;
       width: auto;
-      background-color: #1e1e1e;
+      background-color: gray;
  }
  .add_bun:hover span{
       opacity: 1;
-      color: orange;
+      color: lightgreen;
 }
  .add_bun:after{
        content: "+";
        font-size: 40px;
-       line-height: 50px;
+       line-height: 40px;
        color: gray;
        position: absolute;
-       right: 13px;
+       right: 10px;
        top:0px;
  }
  .add_bun:hover::after{
@@ -154,23 +173,7 @@
       padding: 0 20px;
       color:rgb(163, 46, 163);
 }
-.add_bun{
-      border:solid 1px orange;
-      border-radius: 28px;
-      text-decoration: none;
-      display: inline-block;
-      position: absolute;
-      top: 6%;
-      right: 30px;
-      box-sizing: border-box;
-      background-color: orange;
-      width: 56px;
-      color: gray;
-      line-height: 56px;
-      transition: all 0.8s;
-      overflow: hidden;
 
- }
  .post_comment{
        position: relative;
        display: block;

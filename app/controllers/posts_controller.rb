@@ -12,6 +12,18 @@ class PostsController < ApplicationController
         @post=Post.new
   
       end
+      
+      def like
+        post=Post.find(params[:id])
+        if current_user.like_posts.include?(post)
+          current_user.like_posts.delete(post)
+          render json: {status:0}
+        else
+          current_user.like_posts << post
+          render json: {status:1}
+        end
+      end
+
       def  show
         require "image_processing/mini_magick"
         @comment=PostComment.new

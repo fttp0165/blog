@@ -5,4 +5,5 @@ class Post < ApplicationRecord
       has_rich_text :content
       belongs_to :user
       has_many :post_comments
+      has_many :favorite_posts
 end
