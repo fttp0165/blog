@@ -7,18 +7,17 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+#### ruby 2.6.5p114
+#### Rails 6.0.3.4
 
-* Configuration
 
 * Database creation
+#### MySQL
 
-* Database initialization
 
-* How to run the test suite
+## dependencies
+#### 'bootstrap', '~> 4.5.3'
+#### 'mysql2', '~> 0.4.4'
+#### 'rails_admin', '~> 2.0'
+#### 'devise', '~> 4.2'
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
