@@ -13,7 +13,7 @@
             <div class="post_birth">
                   <pre> <%=time_tag post.created_at%> </pre>
             </div>
-            <%if current_user%>
+            <%if post.user%>
               <div class="post_mos">
                  <p>
                   <%=link_to "編輯" ,edit_post_path(post),class:"btn btn-warning"%>
