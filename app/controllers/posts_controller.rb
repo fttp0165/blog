@@ -17,10 +17,12 @@ class PostsController < ApplicationController
         post=Post.find(params[:id])
         if current_user.like_posts.include?(post)
           current_user.like_posts.delete(post)
-          render json: {status:0}
+          post_count=post.favorite_posts.count
+          render json: {status:0,amount:post_count}
         else
           current_user.like_posts << post
-          render json: {status:1}
+          post_count=post.favorite_posts.count
+          render json: {status:1,amount:post_count}
         end
       end
 

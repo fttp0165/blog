@@ -14,15 +14,16 @@
 
 
 
-  <%= current_user.try(:email) || "訪客"%>
-  <a class="like_btn" data-post-id="<%= @post.id %>">
+  <%= current_user.try(:email) || "訪客"%><br/>
+  <a href="#" class="like_btn"  data-post-id="<%=@post.id%>">
     <%if current_user.like_posts.include?(@post)%>
     <i class="fas fa-thumbs-up"></i>
     <%else%>
-    <i class="far fa-thumbs-up"></i>
+    <i class="far fa-thumbs-up" ></i>
     <%end%>
     </a> 
-    like this post
+     
+     <span class="like_amount"><%="#{@post.favorite_posts.count}"%></span> like this post
     <hr>
     <div class="post_comment">
       <div class="row">
