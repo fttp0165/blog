@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
       before_action :get_posts,only:[:show,:edit,:destroy,:update]
       before_action :clear_params,only:[:create,:update]
+      before_action :authenticate_user!,except:[:index,:show]
       def  index
         @post=Post.order(id: :desc).where("!status")
         @post.each do|p|
