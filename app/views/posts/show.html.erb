@@ -5,7 +5,7 @@
       <%=@post.title%> 
     </div>
     <div class="post_author col-12">
-      <%=@post.user.email%>
+      <%=@post.user.try(:name) || 'unknow'%>
     </div>
     <div class="col-2"></div>
     <div class="show_post_content col-6">
@@ -17,7 +17,7 @@
 
 
 
-  <%= current_user.try(:email) || "訪客"%><br/>
+  <%= current_user.try(:name) || "訪客"%><br/>
   <a href="#" class="like_btn"  data-post-id="<%=@post.id%>">
     <%if current_user%>
       <%if current_user.like_posts.include?(@post)%>
