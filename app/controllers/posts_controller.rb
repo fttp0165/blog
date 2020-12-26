@@ -3,7 +3,8 @@ class PostsController < ApplicationController
       before_action :clear_params,only:[:create,:update]
       before_action :authenticate_user!,except:[:index,:show,:search]
       def  index
-        @post=Post.order(id: :desc).where("!status")
+        # @post=Post.order(id: :desc).where("!status")
+        @post = Post.order(id: :desc).page(params[:page]).per(5)
         @post.each do|p|
           p.created_at =p.created_at + 28800
         end
@@ -63,9 +64,8 @@ class PostsController < ApplicationController
       end
 
       def search
-      
         keyword=params[:keyword]
-        @post = Post.where("title like '%#{keyword}%' or content like '%#{keyword}%'") #.page(params[:page]).per(5)where()
+        @post = Post.where("title like '%#{keyword}%' or content like '%#{keyword}%'").page(params[:page]).per(5) #.page(params[:page]).per(5)where()
       end
 
 

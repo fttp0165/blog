@@ -305,6 +305,7 @@ DEPENDENCIES
   foreman
   image_processing (~> 1.0)
   jbuilder (~> 2.7)
+  kaminari (~> 1.2, >= 1.2.1)
   listen (~> 3.2)
   mini_magick (~> 4.11)
   mysql2 (~> 0.4.4)
