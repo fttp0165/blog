@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
       before_action :get_posts,only:[:show,:edit,:destroy,:update]
       before_action :clear_params,only:[:create,:update]
-      before_action :authenticate_user!,except:[:index,:show]
+      before_action :authenticate_user!,except:[:index,:show,:search]
       def  index
         @post=Post.order(id: :desc).where("!status")
         @post.each do|p|
@@ -60,6 +60,12 @@ class PostsController < ApplicationController
           
             @post.destroy
             redirect_to root_path
+      end
+
+      def search
+      
+        keyword=params[:keyword]
+        @post = Post.where("title like '%#{keyword}%' or content like '%#{keyword}%'") #.page(params[:page]).per(5)where()
       end
 
 

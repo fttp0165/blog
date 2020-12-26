@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     member do
       post :like
     end
+    collection do
+      get :search
+    end
     resources :comments,shallow: true,except:[:index,:new,:show]
   end
 
