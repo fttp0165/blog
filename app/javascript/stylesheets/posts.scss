@@ -88,10 +88,11 @@
       border-bottom: dotted 1px gray;
 
  }
+ 
  .show_box{
        
        position: relative;
-       height: 100vh;
+       height: auto;
        margin-top:5%;
        .show_post_title{
             font-size: 50px;
@@ -102,7 +103,7 @@
             font-size: 17px;
             position: relative;
             display: block;
-            height: 150px;
+            height: 100px;
             left: 10%;
        }
        .show_post_content{
@@ -113,6 +114,8 @@
              left:10%;
              box-sizing: inherit;
              white-space: nowrap;
+             height: auto;
+             display: block;
        .trix-content div{
              display: block;
              white-space:pre-line;
