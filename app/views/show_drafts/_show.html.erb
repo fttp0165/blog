@@ -1,0 +1,27 @@
+
+
+
+
+<%posts.each do |post|%>
+      <div class="box row">
+            <div class="post_title col-12">
+                  <%=link_to post.title,post_path(post)%>
+            </div>
+            <div class="post_content row col-12 ">
+                <div class="col-7 text"> <%=sanitize_action_text_content(post.content.body)%></div>
+                <div class="col-4 text"> <%=slice_range post.content.body.to_s%></div>
+               
+            </div>
+               <div class="row col-12 post_mos ">
+                  <div class="post_birth col-12 offset-md-8 ">
+                         <%=time_tag post.created_at%> 
+                  </div>
+                  <div class="col-12 row">
+                    <p class="col-2 offset-md-8"><%=link_to "編輯" ,edit_post_path(post),class:"btn btn-warning col-12"%></p>
+                    <p class="col-2"><%=link_to "刪除" ,post_path(post),method: :delete,data:{confirm: "are you sure?" },class:"btn
+                                btn-danger col-12"%></p>
+                
+              </div>
+               </div>
+      </div>
+<%end%>

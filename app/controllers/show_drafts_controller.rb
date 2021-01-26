@@ -1,13 +1,11 @@
 class ShowDraftsController < ApplicationController
   
   def index
-    draft=1
-    @post=Post.where("user_id=? AND status=?",current_user.id,draft)
+    @post=current_user.posts.where(status: :draft)
   end
 
   def publish
-    publish=0
-    @post=Post.where("user_id=? AND status=?",current_user.id,publish)
+    @post=current_user.posts.where(status: :publish)
   end
 
 end
