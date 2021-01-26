@@ -4,15 +4,12 @@ class PostsController < ApplicationController
       before_action :authenticate_user!,except:[:index,:show,:search]
       def  index
         # @post=Post.order(id: :desc).where("!status")
-        @post = Post.order(id: :desc).page(params[:page]).per(5)
-        @post.each do|p|
-          p.created_at =p.created_at + 28800
-        end
+        @post = Post.with_rich_text_content.order(id: :desc).page(params[:page]).per(5)
+   
       end
 
       def new
         @post=Post.new
-  
       end
 
       def like
@@ -74,7 +71,7 @@ class PostsController < ApplicationController
         @clear_params=params.require(:post).permit(:title,:content,:status)
       end
       def get_posts
-            @post=Post.find(params[:id])
+            @post=Post.with_rich_text_content.find(params[:id])
       end
       def find_user
         @user=User.find(curret_user[:id])

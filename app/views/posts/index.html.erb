@@ -1,36 +1,39 @@
 <p>
-      <%=link_to "<span>新增文章</span>" .html_safe,new_post_path,class:"add_bun",style:"text-decoration: none;"%>
+      <%=link_to "<span>新增文章</span>" .html_safe,new_post_path,class:"add_bun ",style:" text-decoration: none;"%>
 </p>
-
 <%@post.each do |post|%>
-      <div class="box">
-            <div class="post_title">
+      <div class="box row">
+            <div class="post_title col-12">
                   <%=link_to post.title,post_path(post)%>
             </div>
-            <div class="post_content">
-                  <%=post.content%>
+            <div class="post_content row col-12 ">
+                <div class="col-7 text"> <%=sanitize_action_text_content(post.content.body)%></div>
+                <div class="col-4 text"> <%=slice_range post.content.body.to_s%></div>
+               
             </div>
-            <div class="post_birth">
-                  <pre> <%=time_tag post.created_at%> </pre>
-            </div>
-            <%if post.user == current_user && current_user%>
-              <div class="post_mos">
-                 <p>
-                   
-                  <%=link_to "編輯" ,edit_post_path(post),class:"btn btn-warning"%>
-                 </p>
-                 <p>
-                   <%=link_to "刪除" ,post_path(post),method: :delete,data:{confirm: "are you sure?" },class:"btn btn-danger"%>
-                 </p>
-              </div>
-            <%end%>
+               <div class="row col-12 post_mos ">
+                  <div class="post_birth col-6 ">
+                         <%=time_tag post.created_at%> 
+                  </div>
+                  <!-- <%if post.user==current_user && current_user%>
+                        <div class=" row col-6 post_edit">
+                              <p>
+                                    <%=link_to "編輯" ,edit_post_path(post),class:"btn btn-warning col-12"%>
+                              </p>
+                              <p>
+                                    <%=link_to "刪除" ,post_path(post),method: :delete,data:{confirm: "are you sure?"
+                                          },class:"btn btn-danger col-12"%>
+                              </p>
+                        </div>
+                  <%end%> -->
+               </div>
       </div>
 <%end%>
 
-<div class="row">
-  <div class="col-4"></div>
-  <div class="col-4">
-    <%= paginate @post%>
-  </div>
-  <div class="col-4"></div>
-</div>
+            <div class="row">
+                  <div class="col-4"></div>
+                  <div class="col-4">
+                        <%= paginate @post%>
+                  </div>
+                  <div class="col-4"></div>
+            </div>

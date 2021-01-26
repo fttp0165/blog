@@ -5,30 +5,45 @@
       border:solid 1px lightblue;
       display: block;
       position: relative;
-      height:300px;
+      height:350px;
       margin: 8%;
 
       .post_title{
             font-size:30px;
             margin: 10px;
+            height: 45px;
       }
       .post_content{
-            display: block;
+            display: inline-block;
             width: 80%;
-            height:150px;
+            height:100px;
             overflow:hidden;
-            margin: 10px;
+            margin: 0;
+            box-sizing: inherit;
+      .text{
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+      
+            height: 100px;
+            overflow:hidden;
+           
+         }
       }
       .post_birth{
-            position: absolute;
-            bottom: 20px;
-            right: 20%;
-
+            line-height: 54px;
+            display: inline;
+            box-sizing: inherit;
       }
       .post_mos{
-            position: absolute;
-            bottom: 20px;
-            right: 1%;
+            height:50px;
+      }
+      .post_edit{
+            position: relative;
+            bottom: 0;
+            padding-left:110px ;
+            padding-top:30px ;
       }
     
 }
